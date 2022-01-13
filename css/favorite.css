@@ -1,0 +1,315 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "montserrat";
+  src: url("../fonts/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/montserrat-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: url("../fonts/montserrat-italic-webfont.woff2") format("woff2"), url("../fonts/montserrat-italic-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  font-family: "montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1145px;
+}
+
+.heading {
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 43px;
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 25px;
+    text-align: center;
+  }
+}
+.bg-color {
+  background-color: #22313F;
+}
+
+.movies-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.movies-section .movies-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.movies-section .movies-list__item {
+  position: relative;
+  max-width: 240px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.movies-section .movies-list__wrapper {
+  position: relative;
+  height: 360px;
+  margin-bottom: 15px;
+}
+.movies-section .movies-list__info {
+  font-weight: 300;
+  padding: 0 15px;
+}
+.movies-section .movies-list__cursor {
+  background-color: #000000;
+  opacity: 0.1;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.movies-section .movies-list__cursor:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+.movies-section .movies-list__img {
+  height: 100%;
+  border-radius: 10px;
+}
+.movies-section .movies-list__heading {
+  font-size: 16px;
+  min-height: 50px;
+  color: #fff;
+}
+.movies-section .movies-list__genre {
+  font-size: 12px;
+  color: #c5ad4f;
+}
+.movies-section .movies-list__average {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  right: 0;
+  background-color: #22313F;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.movies-section .movies-list__average--green {
+  border: 1px solid green;
+}
+.movies-section .movies-list__average--orange {
+  border: 1px solid orange;
+}
+.movies-section .movies-list__average--red {
+  border: 1px solid red;
+}
+.movies-section .movies-list__favorites {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+}
+.movies-section .movies-list__favorites:hover {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.movies-section .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.movies-section .pagination__link {
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 13px;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  max-height: 50%;
+  overflow: scroll;
+  border-radius: 10px;
+  animation-name: animation;
+  -webkit-animation-name: animation;
+  animation-duration: 0.1s;
+  -webkit-animation-duration: 0.1s;
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+}
+
+.movies-list__wrapper:hover .description {
+  display: block;
+  padding: 0 15px;
+  -webkit-animation: animation 1000ms linear both;
+          animation: animation 1000ms linear both;
+}
+
+@-webkit-keyframes animation {
+  0% {
+    -webkit-transform: scaleY(0.1);
+            transform: scaleY(0.1);
+  }
+  40% {
+    -webkit-transform: scaleY(1.02);
+            transform: scaleY(1.02);
+  }
+  60% {
+    -webkit-transform: scaleY(0.98);
+            transform: scaleY(0.98);
+  }
+  80% {
+    -webkit-transform: scaleY(1.01);
+            transform: scaleY(1.01);
+  }
+  100% {
+    -webkit-transform: scaleY(0.98);
+            transform: scaleY(0.98);
+  }
+  80% {
+    -webkit-transform: scaleY(1.01);
+            transform: scaleY(1.01);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes animation {
+  0% {
+    -webkit-transform: scaleY(0.1);
+            transform: scaleY(0.1);
+  }
+  40% {
+    -webkit-transform: scaleY(1.02);
+            transform: scaleY(1.02);
+  }
+  60% {
+    -webkit-transform: scaleY(0.98);
+            transform: scaleY(0.98);
+  }
+  80% {
+    -webkit-transform: scaleY(1.01);
+            transform: scaleY(1.01);
+  }
+  100% {
+    -webkit-transform: scaleY(0.98);
+            transform: scaleY(0.98);
+  }
+  80% {
+    -webkit-transform: scaleY(1.01);
+            transform: scaleY(1.01);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+.movies-svg:hover {
+  fill: #fff;
+  stroke: black;
+  /* цвет обводки */
+  stroke-width: 1px;
+  /* толщина обводки */
+  stroke-opacity: 0.8;
+  /* прозрачность обводки */
+}
+
+.header {
+  height: 145px;
+}
+.header__container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header__logo {
+  font-weight: 700;
+  font-size: 55px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header__logo {
+  margin: 0 auto;
+}
+
+.movies-list__favorites {
+  font-size: 35px;
+}
+
+.movies-list__favorites:hover {
+  color: #fff;
+}
+
+.heading {
+  text-align: center;
+}

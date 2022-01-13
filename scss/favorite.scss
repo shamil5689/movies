@@ -1,0 +1,22 @@
+@import 'color.scss';
+@import 'fonts.scss';
+@import 'commonStyle.scss';
+@import 'movies-section.scss';
+
+@include commonHeader;
+.header{
+    &__logo{
+        margin: 0 auto;
+    }
+}
+
+.movies-list__favorites{
+    font-size: 35px;
+}
+.movies-list__favorites:hover{
+    color: $color-text;
+}
+
+.heading{
+    text-align: center;
+}

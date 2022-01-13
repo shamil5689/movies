@@ -1,0 +1,170 @@
+.movies-section{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .movies-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &__item{
+            position: relative;
+            max-width: 240px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        &__wrapper{
+            position: relative;
+            height: 360px;
+            margin-bottom: 15px;
+        }
+        &__info{
+            font-weight: 300;
+            padding: 0 15px;
+        }
+        &__cursor{
+            // z-index: 1;
+            background-color: $black-color;
+            opacity: 0.1;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            max-width: 100%;
+            height: 100%;
+            border-radius: 10px;
+
+            &:hover{
+                background-color: grey;
+                cursor: pointer;
+            }
+        }
+        &__img{
+            height: 100%;
+            border-radius: 10px;
+        }
+        &__heading{
+            font-size: 16px;
+            min-height: 50px;
+            color: $color-text;
+        }
+        &__genre{
+            font-size: 12px;
+            color: $color-genre;
+        }
+        &__average{
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            right: 0;
+            background-color: $bg-color;
+            color: $color-text;
+            font-size: 16px;
+            border-radius: 100%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &--green{
+                border: 1px solid green;
+            }
+            &--orange{
+                border: 1px solid orange;
+            }
+            &--red{
+                border: 1px solid red;
+            }
+        }
+        &__favorites{
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background-color: transparent;
+            border: none;
+            &:hover{
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+    .pagination{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__link{
+            color: $color-text;
+            font-weight: 300;
+            font-size: 16px;
+        }
+    }
+}
+.description{
+    font-weight: 300;
+    font-size: 13px;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-text;
+    max-height: 50%;
+    overflow: scroll;
+    border-radius: 10px;
+    animation-name: animation;
+    -webkit-animation-name: animation;	
+
+    animation-duration: .1s;	
+    -webkit-animation-duration: .1s;
+
+    animation-timing-function: ease-out;	
+    -webkit-animation-timing-function: ease-out;	
+
+    transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%; 
+}
+
+.movies-list__wrapper:hover .description{
+    display: block;
+    padding: 0 15px;
+    animation: animation 1000ms linear both;
+}
+    @keyframes animation {
+        0% {
+            transform: scaleY(0.1);
+        }
+        40% {
+            transform: scaleY(1.02);
+        }
+        60% {
+            transform: scaleY(0.98);
+        }
+        80% {
+            transform: scaleY(1.01);
+        }
+        100% {
+            transform: scaleY(0.98);
+        }				
+        80% {
+            transform: scaleY(1.01);
+        }
+        100% {
+            transform: scaleY(1);
+        }
+      }
+      
+  
+
+
+.movies-svg {
+    &:hover{
+        fill: $color-text;
+        stroke: black; /* цвет обводки */
+        stroke-width: 1px; /* толщина обводки */
+        stroke-opacity: .8; /* прозрачность обводки */      
+    }
+}

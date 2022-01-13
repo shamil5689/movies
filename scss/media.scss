@@ -1,0 +1,11 @@
+@media (max-width: 576px) {
+    .header__container{
+        flex-direction: column;
+    }
+    .header__logo{
+        margin-bottom: 10px;
+    }
+    .header__link{
+        margin-bottom: 10px;
+    }
+}

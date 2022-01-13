@@ -1,0 +1,20 @@
+@include commonHeader;
+.header{
+    &__link{
+        font-weight: 300;
+        font-size: 16px;
+        color: $color-text;
+        margin-bottom: 20px;
+    }
+    .header-form{
+        &__search{
+            font-family: 'montserrat', sans-serif;
+            font-weight: 300;
+            background-color: transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: $color-text;
+        }
+    }
+}
+
